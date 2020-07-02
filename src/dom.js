@@ -28,18 +28,34 @@ export const dom = (() => {
     const newDiv = document.createElement('div');
     if(classArray != null){
       for (let i = 0; i < classArray.length; i += 1) {
-        newImage.classList.add(classArray[i]);
+        newDiv.classList.add(classArray[i]);
       }
     }
     parentElement.append(newDiv);
     return newDiv;
   }
 
+  const appendHtmlSpan = (parentElement, text, classArray = null) => {
+    const newSpan = document.createElement('span');
+    if(classArray != null){
+      for (let i = 0; i < classArray.length; i += 1) {
+        newImage.classList.add(classArray[i]);
+      }
+    }
+    newSpan.innerHTML = text;
+    parentElement.append(newSpan);
+    return newSpan;
+  }
+
   const drawWeather = (container, weatherData) => {
     container.innerHTML = "";
-    console.log(weatherData);
-    appendHtmlHeading(container, weatherData.name, 2, 'text-center');
+    appendHtmlHeading(container, weatherData.name, 2, ['text-center']);
+    appendHtmlSpan(container, weatherData.weather[0].main)
     appendHtmlImage(container, `../img/${weatherData.weather[0].icon}.svg`, ['w-75', 'h-auto']);
+    let infoDiv = appendHtmlDiv(container, ['w-75', 'd-flex', 'flex-column']);
+    let temperatureDiv = appendHtmlDiv(infoDiv, ['w-100', 'd-flex', 'flex-row', 'justify-content-between']);
+    appendHtmlSpan(temperatureDiv, (weatherData.main.temp - 273.1).toFixed(2) + ' °C');
+    appendHtmlSpan(temperatureDiv, ((weatherData.main.temp - 273.1) * 9 / 5 + 32).toFixed(2) + ' °F');
   }
 
   return { drawWeather };
