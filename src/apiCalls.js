@@ -1,10 +1,10 @@
 export const apiCalls = (() => {
   const getCountryWeather = (countryName, apiKey) => {
     const weatherPromise = new Promise(((resolve, reject) => {
-      const apiCall = `http://api.openweathermap.org/data/2.5/weather?q=${countryName}&APPID=${apiKey}`;
+      const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${countryName}&APPID=${apiKey}`;
       fetch(apiCall, { mode: 'cors' })
         .catch((weatherCatch) => {
-          reject(Error(weatherCatch.json()));
+          reject(Error(weatherCatch));
         })
         .then((response) => {
           if (response.status === 200) {
