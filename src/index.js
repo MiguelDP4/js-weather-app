@@ -3,29 +3,29 @@ import { apiCalls } from './apiCalls';
 import { dom } from './dom';
 
 window.onload = function initializePage() {
-  let key = 'a50424f7c35e339cf565a9addc478655';
-  let inputField = document.getElementById('city-input');
-  let searchButton = document.getElementById('search-button');
-  let pageContent = document.getElementById('content');
-  let tScale = document.getElementById('t-scale');
-  searchButton.addEventListener('click', function(){
+  const key = 'a50424f7c35e339cf565a9addc478655';
+  const inputField = document.getElementById('city-input');
+  const searchButton = document.getElementById('search-button');
+  const pageContent = document.getElementById('content');
+  const tScale = document.getElementById('t-scale');
+  searchButton.addEventListener('click', () => {
     let temperatureScale;
-    if(tScale.checked){
+    if (tScale.checked) {
       temperatureScale = '°F';
     } else {
       temperatureScale = '°C';
     }
-    let weatherPromise = apiCalls.getCountryWeather(inputField.value, key);
-    weatherPromise.then(function(result){
-      dom.drawWeather(pageContent, result, temperatureScale);
+    const weatherPromise = apiCalls.getCountryWeather(inputField.value, key);
+    weatherPromise.then((result) => {
+      if (result instanceof Error) dom.drawError(pageContent, `Error: ${result.message}`);
+      else dom.drawWeather(pageContent, result, temperatureScale);
     });
   });
 
-  inputField.addEventListener('keyup', function(event){
-    if(event.keyCode === 13) {  
+  inputField.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
       event.preventDefault();
       searchButton.click();
     }
   });
-
 };

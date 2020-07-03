@@ -6,13 +6,14 @@ nav {
   padding-top: 9px;
   background-color: #1d2e3b;
   height: 56px;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 #content {
   margin: 10vh auto;
   background-color: #eee;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
   span {
     font-size: 1.2em;
   }
@@ -23,7 +24,8 @@ nav {
   bottom: 0;
   right: 0;
   color: rgb(0, 0, 0);
-  text-shadow: 0 4px 5px 0 rgba(0,0,0,0.14);
+  text-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+
   a {
     color: rgb(163, 163, 163);
   }
@@ -37,7 +39,7 @@ nav {
   margin-top: 2px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -51,11 +53,11 @@ nav {
   right: 0;
   bottom: 0;
   background-color: #6396bd;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: "";
   height: 26px;
@@ -63,11 +65,11 @@ nav {
   left: 4px;
   bottom: 4px;
   background-color: #007bff;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
   -webkit-transform: translateX(15px);
   -ms-transform: translateX(15px);
   transform: translateX(15px);
