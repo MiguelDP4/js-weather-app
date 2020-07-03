@@ -59,7 +59,7 @@ export const dom = (() => {
       appendHtmlSpan(temperatureDiv, `Feels like: ${(weatherData.main.feels_like - 273.1).toFixed(2)} °C`);
     } else {
       appendHtmlSpan(temperatureDiv, `Temperature: ${(((weatherData.main.temp - 273.1) * (9 / 5)) + 32).toFixed(2)} °F`);
-      appendHtmlSpan(temperatureDiv, `Temperature: ${(((weatherData.main.feels_like - 273.1) * (9 / 5)) + 32).toFixed(2)} °F`);
+      appendHtmlSpan(temperatureDiv, `Feels like: ${(((weatherData.main.feels_like - 273.1) * (9 / 5)) + 32).toFixed(2)} °F`);
     }
   };
   const drawError = (container, message) => {
