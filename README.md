@@ -1,63 +1,38 @@
-# Project Name
+# Javascript weather app
 
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+This project was developed to practice asynchronous calls and working with APIs.
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- Javascript
+- npm
+- webpack 
+
+## How to deploy
+Upload index.html and main.js to your server. Access the page by going to the index.html address.
+
+
+## Author
+
+👤 **Miguel Dubois**
+
+- Github: [@MiguelDP4](https://github.com/MiguelDP4)
+- Twitter: [@Mike_DP4](https://twitter.com/Mike_DP4)
+- LinkedIn [Miguel Dubois](https://www.linkedin.com/in/miguel-angel-dubois)
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+You can check a demo version of the project in [this link](https://raw.githack.com/MiguelDP4/js-weather-app/feature/dist/index.html).
 
+### Images
 
-## Getting Started
+#### Application Screenshot
+![screenshot](./img/app_screenshot.png)
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
+This project is for learning purposes only, I wont accept contributions, though suggestions are welcome.
 
 ## Show your support
 
@@ -65,10 +40,4 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
+- I thank microverse for this learning opportunity.
