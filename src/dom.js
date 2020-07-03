@@ -47,15 +47,20 @@ export const dom = (() => {
     return newSpan;
   }
 
-  const drawWeather = (container, weatherData) => {
+  const drawWeather = (container, weatherData, temperatureScale) => {
     container.innerHTML = "";
     appendHtmlHeading(container, weatherData.name, 2, ['text-center']);
-    appendHtmlSpan(container, weatherData.weather[0].main)
+    appendHtmlSpan(container, weatherData.weather[0].description)
     appendHtmlImage(container, `../img/${weatherData.weather[0].icon}.svg`, ['w-75', 'h-auto']);
     let infoDiv = appendHtmlDiv(container, ['w-75', 'd-flex', 'flex-column']);
     let temperatureDiv = appendHtmlDiv(infoDiv, ['w-100', 'd-flex', 'flex-row', 'justify-content-between']);
-    appendHtmlSpan(temperatureDiv, (weatherData.main.temp - 273.1).toFixed(2) + ' °C');
-    appendHtmlSpan(temperatureDiv, ((weatherData.main.temp - 273.1) * 9 / 5 + 32).toFixed(2) + ' °F');
+    if(temperatureScale === '°C'){
+      appendHtmlSpan(temperatureDiv, 'Temperature: ' + (weatherData.main.temp - 273.1).toFixed(2) + ' °C');
+      appendHtmlSpan(temperatureDiv, 'Feels like: ' + (weatherData.main.feels_like - 273.1).toFixed(2) + ' °C');
+    } else {
+      appendHtmlSpan(temperatureDiv, 'Temperature: ' + ((weatherData.main.temp - 273.1) * 9 / 5 + 32).toFixed(2) + ' °F');
+      appendHtmlSpan(temperatureDiv, 'Temperature: ' + ((weatherData.main.feels_like - 273.1) * 9 / 5 + 32).toFixed(2) + ' °F');
+    }
   }
 
   return { drawWeather };

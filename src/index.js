@@ -7,10 +7,17 @@ window.onload = function initializePage() {
   let inputField = document.getElementById('city-input');
   let searchButton = document.getElementById('search-button');
   let pageContent = document.getElementById('content');
+  let tScale = document.getElementById('t-scale');
   searchButton.addEventListener('click', function(){
+    let temperatureScale;
+    if(tScale.checked){
+      temperatureScale = '°F';
+    } else {
+      temperatureScale = '°C';
+    }
     let weatherPromise = apiCalls.getCountryWeather(inputField.value, key);
     weatherPromise.then(function(result){
-      dom.drawWeather(pageContent, result);
+      dom.drawWeather(pageContent, result, temperatureScale);
     });
   });
 
