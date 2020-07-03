@@ -10,7 +10,7 @@ export const apiCalls = (() => {
           if (response.status === 200) {
             resolve(response.json());
           } else if (response.status === 404) {
-            reject(Error('The country was not found'));
+            reject(Error('The city was not found'));
           }
         });
     }));
